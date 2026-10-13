@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // ─────────────────────────────────────────────
-    // Centralized Footer Loader
-    // ─────────────────────────────────────────────
-    /* CANONICAL_FOOTER_START */
-    const canonicalFooterHTML = `<footer class="cr-footer">
+  // ─────────────────────────────────────────────
+  // Centralized Footer Loader
+  // ─────────────────────────────────────────────
+  /* CANONICAL_FOOTER_START */
+  const canonicalFooterHTML = `<footer class="cr-footer">
   <div class="cr-footer__inner">
 
     <!-- TOP GRID -->
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.785-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.74-1.8-.365-.468-.702-.84-1.685-.84-1.201 0-2.07.24-2.595.717-.35.318-.537.727-.612 1.157l-1.968-.35c.186-1.018.714-1.86 1.517-2.528C8.976 5.073 10.205 4.81 11.618 4.81c.6 0 1.118.058 1.621.18.914.22 1.629.544 2.157 1.008.914.805 1.405 1.868 1.405 3.177 0 .5-.043.998-.129 1.487.85.513 1.511 1.201 1.9 2.016.543 1.14.465 2.715-.263 4.13-1.094 2.132-3.344 3.174-6.895 3.194z" />
             </svg>
           </a>
-          <a href="https://www.youtube.com/@coderegimetechnologiess" target="_blank" rel="noopener" aria-label="YouTube">
+          <a href="https://www.youtube.com/@CodeRegime" target="_blank" rel="noopener" aria-label="YouTube">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.86-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M9.996,15.005l0-6.01L15.224,12L9.996,15.005z"/>
             </svg>
@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <ul class="cr-footer__list">
           <li><a href="/about-us/">About Us</a></li>
           <li><a href="/Portfolio/">Portfolio</a></li>
+          <li><a href="/careers/">Careers</a></li>
           <li><a href="/contact-us/">Contact Us</a></li>
         </ul>
       </div>
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <!-- Column 4.5: Careers -->
       <div class="cr-footer__col">
-        <h3>Careers</h3>
+        <h3><a href="/careers/" style="color: inherit; text-decoration: none;">Careers</a></h3>
         <ul class="cr-footer__contact-list">
           <li>
             <div class="cr-footer__contact-icon">
@@ -99,6 +100,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 aria-label="hr@coderegimetechnologies.com"
                 rel="noopener"><span>hr@coderegimetechnologies.com</span>
               </a>
+            </div>
+          </li>
+          <li>
+            <div class="cr-footer__contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+              </svg>
+            </div>
+            <div class="cr-footer__contact-text">
+              <strong>Job Openings</strong>
+              <a href="/careers/">Apply Now</a>
             </div>
           </li>
         </ul>
@@ -208,42 +220,42 @@ document.addEventListener("DOMContentLoaded", function () {
     </p>
   </div><!-- /inner -->
 </footer>`;
-    /* CANONICAL_FOOTER_END */
+  /* CANONICAL_FOOTER_END */
 
-    const siteFooterPlaceholder = document.getElementById("site-footer") || 
-                                  document.getElementById("cr-footer-placeholder") || 
-                                  document.querySelector("site-footer");
+  const siteFooterPlaceholder = document.getElementById("site-footer") ||
+    document.getElementById("cr-footer-placeholder") ||
+    document.querySelector("site-footer");
 
-    if (siteFooterPlaceholder) {
-        siteFooterPlaceholder.outerHTML = canonicalFooterHTML;
+  if (siteFooterPlaceholder) {
+    siteFooterPlaceholder.outerHTML = canonicalFooterHTML;
+  }
+
+  // Inject SweetAlert2 dynamically with long-lived 1-year cache (pinned version)
+  function ensureSwal(callback) {
+    if (typeof Swal !== 'undefined') {
+      if (callback) callback();
+      return;
     }
+    const swalScript = document.createElement('script');
+    swalScript.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js';
+    if (callback) swalScript.onload = callback;
+    document.head.appendChild(swalScript);
+  }
 
-    // Inject SweetAlert2 dynamically with long-lived 1-year cache (pinned version)
-    function ensureSwal(callback) {
-        if (typeof Swal !== 'undefined') {
-            if (callback) callback();
-            return;
-        }
-        const swalScript = document.createElement('script');
-        swalScript.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js';
-        if (callback) swalScript.onload = callback;
-        document.head.appendChild(swalScript);
-    }
+  // Preload SweetAlert2 during idle time (without blocking critical rendering)
+  if (typeof window.requestIdleCallback === 'function') {
+    window.requestIdleCallback(() => ensureSwal());
+  } else {
+    setTimeout(ensureSwal, 4000);
+  }
 
-    // Preload SweetAlert2 during idle time (without blocking critical rendering)
-    if (typeof window.requestIdleCallback === 'function') {
-        window.requestIdleCallback(() => ensureSwal());
-    } else {
-        setTimeout(ensureSwal, 4000);
-    }
+  // Update copyright year
+  document.querySelectorAll("#year, .footer-year").forEach(span => {
+    span.textContent = new Date().getFullYear();
+  });
 
-    // Update copyright year
-    document.querySelectorAll("#year, .footer-year").forEach(span => {
-        span.textContent = new Date().getFullYear();
-    });
-
-    // Add Floating Social Bar
-    const floatingBarHTML = `
+  // Add Floating Social Bar
+  const floatingBarHTML = `
         <style>
         .cr-floating-social {
             position: fixed;
@@ -394,14 +406,14 @@ document.addEventListener("DOMContentLoaded", function () {
             </a>
         </div>
     `;
-    
-    document.body.insertAdjacentHTML("beforeend", floatingBarHTML);
 
-    // Auto-show Contact Modal
-    (function initContactModal() {
-        if (typeof window.bootstrap === 'undefined') return;
+  document.body.insertAdjacentHTML("beforeend", floatingBarHTML);
 
-        const contactModalHTML = `
+  // Auto-show Contact Modal
+  (function initContactModal() {
+    if (typeof window.bootstrap === 'undefined') return;
+
+    const contactModalHTML = `
     <div class="modal fade" id="contactPopup" tabindex="-1" aria-labelledby="contactPopupLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content" style="background-color: #ffffff;">
@@ -466,121 +478,121 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     </div>`;
-    
+
     // Only inject if it doesn't already exist on the page (e.g. from header.html on some pages)
     if (!document.getElementById("contactPopup")) {
-        document.body.insertAdjacentHTML("beforeend", contactModalHTML);
+      document.body.insertAdjacentHTML("beforeend", contactModalHTML);
     }
 
     // Auto-show Contact Modal after 6.5 seconds (without sessionStorage check for now for testing)
     setTimeout(() => {
-        const contactPopup = document.getElementById("contactPopup");
-        console.log("Checking for contactPopup in footer.js:", contactPopup);
-        
-        if (contactPopup) {
-            if (typeof window.bootstrap !== 'undefined') {
-                const modal = new bootstrap.Modal(contactPopup);
-                modal.show();
-            }
+      const contactPopup = document.getElementById("contactPopup");
+      console.log("Checking for contactPopup in footer.js:", contactPopup);
+
+      if (contactPopup) {
+        if (typeof window.bootstrap !== 'undefined') {
+          const modal = new bootstrap.Modal(contactPopup);
+          modal.show();
         }
+      }
     }, 6500);
 
     // Form submission logic for the modal
     const contactPopupForm = document.querySelector("#contactPopup form");
     if (contactPopupForm) {
-        contactPopupForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+      contactPopupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-            const fname = contactPopupForm.querySelector("#name") ? contactPopupForm.querySelector("#name").value.trim() : '';
-            const email = contactPopupForm.querySelector("#email") ? contactPopupForm.querySelector("#email").value.trim() : '';
-            const country = contactPopupForm.querySelector("#country") ? contactPopupForm.querySelector("#country").value.trim() : '';
-            const phone = contactPopupForm.querySelector("#mobile") ? contactPopupForm.querySelector("#mobile").value.trim() : '';
-            
-            const serviceEl = contactPopupForm.querySelector("#service");
-            const service = serviceEl ? serviceEl.options[serviceEl.selectedIndex].text : '';
-            
-            const requirements = contactPopupForm.querySelector("#requirements");
-            const message = requirements ? requirements.value.trim() : '';
+        const fname = contactPopupForm.querySelector("#name") ? contactPopupForm.querySelector("#name").value.trim() : '';
+        const email = contactPopupForm.querySelector("#email") ? contactPopupForm.querySelector("#email").value.trim() : '';
+        const country = contactPopupForm.querySelector("#country") ? contactPopupForm.querySelector("#country").value.trim() : '';
+        const phone = contactPopupForm.querySelector("#mobile") ? contactPopupForm.querySelector("#mobile").value.trim() : '';
 
-            if (!fname || !email || !message) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Missing Fields',
-                    text: 'Please fill in Name, Email, and Requirements.'
-                });
-                return;
-            }
+        const serviceEl = contactPopupForm.querySelector("#service");
+        const service = serviceEl ? serviceEl.options[serviceEl.selectedIndex].text : '';
 
-            const submitBtn = contactPopupForm.querySelector('button[type="submit"]');
-            const originalBtnHTML = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending...';
+        const requirements = contactPopupForm.querySelector("#requirements");
+        const message = requirements ? requirements.value.trim() : '';
 
-            const templateParams = {
-                fname: fname,
-                lname: ' ', // Keep empty or space to avoid spam triggers in subject lines
-                email: email,
-                user_email: email,
-                phone: phone || 'Not Specified',
-                company: country ? 'Country: ' + country : 'Not Specified',
-                budget: 'Not Specified',
-                service: service || 'Not Specified',
-                message: message
-            };
+        if (!fname || !email || !message) {
+          Swal.fire({
+            icon: 'warning',
+            title: 'Missing Fields',
+            text: 'Please fill in Name, Email, and Requirements.'
+          });
+          return;
+        }
 
-            function sendEmail() {
-                emailjs.init('mtyXCsYdD3ElJGNum');
-                const SERVICE_ID = 'service_cht9xji';
-                const INTERNAL_TEMPLATE_ID = 'template_uqoo9yi';
-                const THANKYOU_TEMPLATE_ID = 'template_qv65elf';
-                
-                emailjs.send(SERVICE_ID, INTERNAL_TEMPLATE_ID, templateParams)
-                    .then(() => {
-                        return emailjs.send(SERVICE_ID, THANKYOU_TEMPLATE_ID, templateParams);
-                    })
-                    .then(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalBtnHTML;
-                        
-                        if (window.bootstrap) {
-                            const modalEl = document.getElementById("contactPopup");
-                            if (modalEl) {
-                                const modal = bootstrap.Modal.getInstance(modalEl);
-                                if (modal) modal.hide();
-                            }
-                        }
-                        contactPopupForm.reset();
-                        window.location.href = '/thank-you/';
-                    })
-                    .catch(err => {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalBtnHTML;
-                        console.error('EmailJS Error:', err);
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error!',
-                            text: 'Failed to send message. Please try again.\n\nError: ' + (err.text || err)
-                        });
-                    });
-            }
+        const submitBtn = contactPopupForm.querySelector('button[type="submit"]');
+        const originalBtnHTML = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending...';
 
-            if (typeof emailjs !== 'undefined') {
-                sendEmail();
-            } else {
-                const script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-                script.onload = sendEmail;
-                document.head.appendChild(script);
-            }
-        });
+        const templateParams = {
+          fname: fname,
+          lname: ' ', // Keep empty or space to avoid spam triggers in subject lines
+          email: email,
+          user_email: email,
+          phone: phone || 'Not Specified',
+          company: country ? 'Country: ' + country : 'Not Specified',
+          budget: 'Not Specified',
+          service: service || 'Not Specified',
+          message: message
+        };
+
+        function sendEmail() {
+          emailjs.init('mtyXCsYdD3ElJGNum');
+          const SERVICE_ID = 'service_cht9xji';
+          const INTERNAL_TEMPLATE_ID = 'template_uqoo9yi';
+          const THANKYOU_TEMPLATE_ID = 'template_qv65elf';
+
+          emailjs.send(SERVICE_ID, INTERNAL_TEMPLATE_ID, templateParams)
+            .then(() => {
+              return emailjs.send(SERVICE_ID, THANKYOU_TEMPLATE_ID, templateParams);
+            })
+            .then(() => {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalBtnHTML;
+
+              if (window.bootstrap) {
+                const modalEl = document.getElementById("contactPopup");
+                if (modalEl) {
+                  const modal = bootstrap.Modal.getInstance(modalEl);
+                  if (modal) modal.hide();
+                }
+              }
+              contactPopupForm.reset();
+              window.location.href = '/thank-you/';
+            })
+            .catch(err => {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalBtnHTML;
+              console.error('EmailJS Error:', err);
+              Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: 'Failed to send message. Please try again.\n\nError: ' + (err.text || err)
+              });
+            });
+        }
+
+        if (typeof emailjs !== 'undefined') {
+          sendEmail();
+        } else {
+          const script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+          script.onload = sendEmail;
+          document.head.appendChild(script);
+        }
+      });
     }
-    })();
+  })();
 
-    // ─────────────────────────────────────────────
-    // Custom Robot Tawk.to Chat Button
-    // ─────────────────────────────────────────────
+  // ─────────────────────────────────────────────
+  // Custom Robot Tawk.to Chat Button
+  // ─────────────────────────────────────────────
 
-    const tawkButtonHTML = `
+  const tawkButtonHTML = `
         <style>
             #custom-tawk-button {
                 position: fixed;
@@ -649,37 +661,37 @@ document.addEventListener("DOMContentLoaded", function () {
         </button>
     `;
 
-    document.body.insertAdjacentHTML("beforeend", tawkButtonHTML);
+  document.body.insertAdjacentHTML("beforeend", tawkButtonHTML);
 
-    const button = document.getElementById("custom-tawk-button");
+  const button = document.getElementById("custom-tawk-button");
 
-    // Hide Tawk default launcher when Tawk is ready
-    function hideTawkWidget() {
-        if (
-            window.Tawk_API &&
-            typeof window.Tawk_API.hideWidget === "function"
-        ) {
-            window.Tawk_API.hideWidget();
-        }
+  // Hide Tawk default launcher when Tawk is ready
+  function hideTawkWidget() {
+    if (
+      window.Tawk_API &&
+      typeof window.Tawk_API.hideWidget === "function"
+    ) {
+      window.Tawk_API.hideWidget();
     }
+  }
 
-    // Tawk API
-    window.Tawk_API = window.Tawk_API || {};
+  // Tawk API
+  window.Tawk_API = window.Tawk_API || {};
 
-    window.Tawk_API.onLoad = function () {
-        hideTawkWidget();
-    };
+  window.Tawk_API.onLoad = function () {
+    hideTawkWidget();
+  };
 
-    // Custom robot click
-    button.addEventListener("click", function () {
-        if (
-            window.Tawk_API &&
-            typeof window.Tawk_API.toggle === "function"
-        ) {
-            window.Tawk_API.toggle();
-        } else {
-            console.log("Tawk.to is not loaded yet.");
-        }
-    });
+  // Custom robot click
+  button.addEventListener("click", function () {
+    if (
+      window.Tawk_API &&
+      typeof window.Tawk_API.toggle === "function"
+    ) {
+      window.Tawk_API.toggle();
+    } else {
+      console.log("Tawk.to is not loaded yet.");
+    }
+  });
 
 });

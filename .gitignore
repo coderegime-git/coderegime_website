@@ -26,3 +26,5 @@ Thumbs.db
 coderegime_website
 blog/__pycache__/
 blog/venv/
+.env
+*.env
