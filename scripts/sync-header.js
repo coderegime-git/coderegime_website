@@ -81,6 +81,14 @@ for (const filePath of htmlFiles) {
     }
   }
 
+  // Edge case mitigation: service/flutter and service/android have page hero sections styled via .header { height: 100vh }
+  // Their inner navigation header must NOT have class="header" to prevent stretching the navbar to 100vh
+  let fileCanonicalHeader = canonicalHeader;
+  const normalizedRelPath = relativePath.replace(/\\/g, '/');
+  if (normalizedRelPath === 'service/flutter/index.html' || normalizedRelPath === 'service/android/index.html') {
+    fileCanonicalHeader = fileCanonicalHeader.replace(/<header\s+id=["']head-nav["']\s+class=["']header["']/i, '<header id="head-nav"');
+  }
+
   // 1. Synchronize header markup (multi-priority matching)
   const headNavRegex = /<header\s+id=["']head-nav["'][\s\S]*?<\/header>/i;
   const genericNavRegex = /<header(?:\s+[^>]*?)?>[\s\S]*?<nav[\s\S]*?<\/header>/i;
@@ -97,8 +105,8 @@ for (const filePath of htmlFiles) {
 
   if (matchedPattern) {
     const existingMatch = content.match(matchedPattern)[0].trim();
-    if (existingMatch !== canonicalHeader) {
-      content = content.replace(matchedPattern, canonicalHeader);
+    if (existingMatch !== fileCanonicalHeader) {
+      content = content.replace(matchedPattern, fileCanonicalHeader);
       modified = true;
     }
   } else {
