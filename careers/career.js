@@ -534,7 +534,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Determine Backend API Endpoint
     const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
-    const apiUrl = isLocal ? 'http://127.0.0.1:8002/api/career-apply' : '/api/career-apply';
+    const apiUrl = isLocal ? 'http://127.0.0.1:8002/api/career-apply/' : '/api/career-apply/';
 
     console.log('Sending application to Python SMTP endpoint:', apiUrl);
 

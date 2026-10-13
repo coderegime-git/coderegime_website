@@ -92,7 +92,8 @@ def send_smtp_email(to_addrs, subject, html_body, text_body=None, reply_to=None,
 # API Endpoints
 # =========================================================================
 
-@app.route('/api/health', methods=['GET'])
+@app.route('/api/health', methods=['GET'], strict_slashes=False)
+@app.route('/api/health/', methods=['GET'], strict_slashes=False)
 def health_check():
     return jsonify({
         "status": "healthy",
@@ -100,7 +101,8 @@ def health_check():
         "smtp_configured": bool(EMAIL_HOST_USER and EMAIL_HOST_PASSWORD)
     }), 200
 
-@app.route('/api/career-apply', methods=['POST'])
+@app.route('/api/career-apply', methods=['POST'], strict_slashes=False)
+@app.route('/api/career-apply/', methods=['POST'], strict_slashes=False)
 def career_apply():
     """
     Handles career job application submissions with resume file attachment.
@@ -318,7 +320,8 @@ https://www.coderegimetechnologies.com
         return jsonify({"success": False, "message": f"Server error: {str(e)}"}), 500
 
 
-@app.route('/api/send-inquiry', methods=['POST'])
+@app.route('/api/send-inquiry', methods=['POST'], strict_slashes=False)
+@app.route('/api/send-inquiry/', methods=['POST'], strict_slashes=False)
 def send_inquiry():
     """
     Handles general contact inquiries from modal forms and contact-us pages.
