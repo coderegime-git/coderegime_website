@@ -555,7 +555,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Successfully sent via Python SMTP! Redirect to Thank You page
-        window.location.href = '/sucessfully-submitted/';
+        window.location.href = '/successfully-submitted/';
       })
       .catch(error => {
         submitBtn.disabled = false;
