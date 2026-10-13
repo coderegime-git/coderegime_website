@@ -35,6 +35,10 @@ Enterprise software solutions for complex business workflows and operational req
 Blockchain-based software solutions focused on secure and scalable digital applications.
 - [Blockchain Development](https://www.coderegimetechnologies.com/blockchain-development-services/)
 
+## Custom AI Social Media Management App Development
+Custom all-in-one social media management platform development with prompt-to-post AI, multi-channel scheduling, unified inbox, and 100% source code ownership.
+- [AI Social Media Management](https://www.coderegimetechnologies.com/custom-ai-social-media-management-app-development/)
+
 ## Clone Script Development
 Ready-made and customizable clone script products designed to help businesses launch on-demand and marketplace platforms faster.
 
