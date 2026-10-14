@@ -48,6 +48,20 @@ a {
   transition: all 0.25s ease;
 }
 
+.context-link {
+  color: #2563EB;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(37, 99, 235, 0.35);
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
+}
+
+.context-link:hover {
+  color: #1D4ED8;
+  text-decoration-color: #1D4ED8;
+}
+
 /* ==========================================================================
    HEADER & NAVIGATION (Clean Light SaaS Header)
    ========================================================================== */
