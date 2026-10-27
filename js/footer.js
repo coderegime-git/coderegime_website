@@ -415,74 +415,346 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const contactModalHTML = `
     <div class="modal fade" id="contactPopup" tabindex="-1" aria-labelledby="contactPopupLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="background-color: #ffffff;">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" style="background-color: #ffffff;">
-            <div class="row">
-              <div class="left-side col-lg-5 col-md-12 col-sm-12">
-                <div class="contact-info">
-                  <p><span class="icon whatsapp"><i class="fab fa-whatsapp"></i></span> <a href="https://wa.me/918072218602" target="_blank" rel="noopener">+91 8072218602</a></p>
-                  <p><span class="icon email"><i class="fas fa-envelope"></i></span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@coderegimetechnologies.com" target="_blank" rel="noopener"><span style="white-space: nowrap; font-size: 14px;">sales@coderegimetechnologies.com</span></a></p>
-                  <p><span class="icon mobile"><i class="fas fa-mobile-alt"></i></span> <a href="tel:+918072218602" target="_blank" rel="noopener">+91 8072218602</a></p>
+      <div class="modal-dialog modal-dialog-centered cp-dialog">
+        <div class="modal-content cp-content">
+          <div class="modal-body cp-body">
+
+            <!-- LEFT: Dark Showcase Panel -->
+            <section class="cp-left">
+              <div class="cp-left-bg-dots"></div>
+              <div class="cp-left-orb cp-left-orb--top"></div>
+              <div class="cp-left-orb cp-left-orb--bottom"></div>
+              <div class="cp-left-inner">
+
+                <!-- Testimonial Card (Auto-swiping every 3s) -->
+                <article class="cp-testimonial" id="cpTestimonialCard">
+                  <div class="cp-quote-icon"><i class="fas fa-quote-left"></i></div>
+                  <div class="cp-testimonial-slider" id="cpTestimonialSlider">
+                    <p class="cp-testimonial-text" id="cpTestiQuote">
+                      From initial consultation to final deployment, Code Regime exceeded every expectation. Their team built us a robust, scalable application and provided hands-on support throughout the entire process. A truly world-class partner.
+                    </p>
+                    <div class="cp-testimonial-footer">
+                      <div class="cp-testimonial-author">
+                        <img src="/images/testimonial/testi-1.webp" alt="BLACKBEACON B.V." id="cpTestiAvatar" class="cp-avatar" width="38" height="38" loading="lazy">
+                        <div>
+                          <h4 class="cp-author-name" id="cpTestiName">BLACKBEACON B.V.</h4>
+                          <p class="cp-author-role" id="cpTestiRole">Client</p>
+                        </div>
+                      </div>
+                      <div class="cp-company-badge" id="cpTestiBadge">
+                        <i class="fa-solid fa-cloud-bolt" id="cpTestiIcon"></i>
+                        <span id="cpTestiCompany">Kemetic.app</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Carousel Dots (5 dots) -->
+                <div class="cp-dots" id="cpTestiDots" aria-label="Testimonial navigation">
+                  <span class="cp-dot cp-dot--active" data-index="0" role="button" aria-label="Slide 1"></span>
+                  <span class="cp-dot" data-index="1" role="button" aria-label="Slide 2"></span>
+                  <span class="cp-dot" data-index="2" role="button" aria-label="Slide 3"></span>
+                  <span class="cp-dot" data-index="3" role="button" aria-label="Slide 4"></span>
+                  <span class="cp-dot" data-index="4" role="button" aria-label="Slide 5"></span>
                 </div>
+
+                <!-- Metrics Grid -->
+                <div class="cp-metrics">
+                  <!-- Row 1: Happy Clients (Full-width banner) -->
+                  <div class="cp-metric cp-metric--wide">
+                    <div class="cp-metric-label"><i class="fas fa-users"></i><span>Happy Clients</span></div>
+                    <div class="cp-metric-value">200<span class="cp-metric-plus">+</span></div>
+                  </div>
+                  <!-- Row 2: Projects in app development & Countries Served -->
+                  <div class="cp-metric">
+                    <div class="cp-metric-label">
+                      <i class="fas fa-layer-group"></i>
+                      <span>Projects in <a href="https://www.coderegimetechnologies.com/mobile-app-development/" target="_blank" rel="noopener" class="cp-metric-link">app development</a></span>
+                    </div>
+                    <div class="cp-metric-value">1200<span class="cp-metric-plus">+</span></div>
+                  </div>
+                  <div class="cp-metric">
+                    <div class="cp-metric-label"><i class="fas fa-globe"></i><span>Countries Served</span></div>
+                    <div class="cp-metric-value">20<span class="cp-metric-plus">+</span></div>
+                  </div>
+                  <!-- Row 3: Expert Team Members & Years of Market Domination -->
+                  <div class="cp-metric">
+                    <div class="cp-metric-label"><i class="fas fa-user-tie"></i><span>Expert Team Members</span></div>
+                    <div class="cp-metric-value">50<span class="cp-metric-plus">+</span></div>
+                  </div>
+                  <div class="cp-metric">
+                    <div class="cp-metric-label"><i class="fas fa-crown"></i><span>Years of Market Domination</span></div>
+                    <div class="cp-metric-value">8<span class="cp-metric-plus">+</span></div>
+                  </div>
+                </div>
+
+                <!-- Direct Reach Contact Bar (Email, Phone & WhatsApp) -->
+                <div class="cp-contact-bar">
+                  <!-- Row 1: Email (Full-width single-line) -->
+                  <div class="cp-contact-bar-item cp-contact-bar-item--full">
+                    <span class="cp-contact-icon-circle"><i class="fas fa-envelope"></i></span>
+                    <div class="cp-contact-info">
+                      <span class="cp-contact-label">Send us an email</span>
+                      <a href="mailto:sales@coderegimetechnologies.com" class="cp-contact-value">sales@coderegimetechnologies.com</a>
+                    </div>
+                  </div>
+
+                  <div class="cp-contact-bar-divider-h"></div>
+
+                  <!-- Row 2: Phone & WhatsApp Side-by-Side -->
+                  <div class="cp-contact-bar-row">
+                    <div class="cp-contact-bar-item">
+                      <span class="cp-contact-icon-circle"><i class="fas fa-phone"></i></span>
+                      <div class="cp-contact-info">
+                        <span class="cp-contact-label">Contact Number</span>
+                        <a href="tel:+918072218602" class="cp-contact-value cp-contact-value--bold">+91 80722 18602</a>
+                      </div>
+                    </div>
+                    <div class="cp-contact-divider"></div>
+                    <div class="cp-contact-bar-item">
+                      <span class="cp-contact-icon-circle cp-contact-icon-circle--whatsapp"><i class="fab fa-whatsapp"></i></span>
+                      <div class="cp-contact-info">
+                        <span class="cp-contact-label">WhatsApp Us</span>
+                        <a href="https://wa.me/918072218602" target="_blank" rel="noopener" class="cp-contact-value cp-contact-value--bold cp-contact-value--whatsapp">+91 80722 18602</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Trust Badges -->
+               <!-- <div class="cp-trust-badges">
+                  <div class="cp-badge">
+                    <div class="cp-badge-icon cp-badge-icon--blue">
+                      <span class="cp-badge-top">AICPA</span>
+                      <span class="cp-badge-bottom">SOC</span>
+                    </div>
+                    <div class="cp-badge-text">
+                      <span class="cp-badge-title">AICPA SOC</span>
+                      Certified Security
+                    </div>
+                  </div>
+                  <div class="cp-badge">
+                    <div class="cp-badge-icon cp-badge-icon--green">ISO</div>
+                    <div class="cp-badge-text">
+                      <span class="cp-badge-title">ISO 9001:2015</span>
+                      Quality Assured
+                    </div>
+                  </div>
+                </div> -->
               </div>
-              <div class="right-side col-lg-7 col-md-12 col-sm-12" style="background-color: #ffffff;">
-                <h3 class="modal-title" id="contactPopupLabel" style="color: #1E2460;">Get A Free Project Consultation</h3>
-                <form>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <label for="name" class="form-label" style="color: #0f172a;">Name</label>
-                      <input type="text" class="form-control" id="name" placeholder="Your Name" style="background-color: #ffffff; color: #0f172a; border-color: #94a3b8;">
+            </section>
+
+            <!-- RIGHT: White Form Panel -->
+            <section class="cp-right">
+              <button type="button" class="cp-close" data-bs-dismiss="modal" aria-label="Close">
+                <i class="fas fa-xmark"></i>
+              </button>
+              <div class="cp-right-inner">
+                <div class="cp-form-header">
+                  <h2 class="cp-heading" id="contactPopupLabel">Share Your Vision &amp; Get Instant Revert</h2>
+                  <p class="cp-subtitle">Reach our experts anytime to avail upfront insights on project overview.</p>
+                </div>
+                <form class="cp-form">
+                  <div class="cp-row">
+                    <div class="cp-field">
+                      <span class="cp-icon"><i class="far fa-user"></i></span>
+                      <input type="text" id="name" placeholder="Full name" required>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <label for="email" class="form-label" style="color: #0f172a;">Email</label>
-                      <input type="email" class="form-control" id="email" placeholder="Your Email" style="background-color: #ffffff; color: #0f172a; border-color: #94a3b8;">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <label for="country" class="form-label" style="color: #0f172a;">Country</label>
-                      <input type="text" class="form-control" id="country" placeholder="Your Country" style="background-color: #ffffff; color: #0f172a; border-color: #94a3b8;">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <label for="mobile" class="form-label" style="color: #0f172a;">Mobile</label>
-                      <input type="text" class="form-control" id="mobile" placeholder="Your Mobile" style="background-color: #ffffff; color: #0f172a; border-color: #94a3b8;">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                      <label for="service" class="form-label" style="color: #0f172a;">Select Product/Service</label>
-                      <select class="form-select" id="service" style="background-color: #ffffff; color: #0f172a; border-color: #94a3b8;">
-                        <option value="">Select...</option>
-                        <option value="service1">Mobile App Services</option>
-                        <option value="service2">Web App Services</option>
-                        <option value="service3">Blockchain Services</option>
-                        <option value="service4">Clone Scrpits</option>
-                      </select>
+                    <div class="cp-field">
+                      <span class="cp-icon"><i class="far fa-building"></i></span>
+                      <input type="text" id="company" placeholder="Company Name">
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <label for="requirements" class="form-label" style="color: #0f172a;">Write your requirements in detail</label>
-                      <textarea class="form-control" id="requirements" rows="3" style="background-color: #ffffff; color: #0f172a; border-color: #94a3b8;"></textarea>
-                    </div>
+                  <div class="cp-field">
+                    <span class="cp-icon"><i class="far fa-envelope"></i></span>
+                    <input type="email" id="email" placeholder="example@youremail.com" required>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <div class="cp-field cp-field--phone">
+                    <div class="cp-phone-prefix">
+                      <svg class="cp-flag" viewBox="0 0 640 480" width="16" height="12"><path d="M0 0h640v160H0z" fill="#f93"/><path d="M0 160h640v160H0z" fill="#fff"/><path d="M0 320h640v160H0z" fill="#128807"/><circle cx="320" cy="240" r="40" fill="#008"/></svg>
+                      <i class="fas fa-chevron-down cp-chevron"></i>
+                      <span class="cp-code">+91</span>
+                    </div>
+                    <input type="tel" id="mobile" placeholder="Phone number">
+                  </div>
+                  <div class="cp-field cp-field--select">
+                    <span class="cp-icon"><i class="fas fa-layer-group"></i></span>
+                    <select id="service">
+                      <option value="" disabled selected>Select Product / Service</option>
+                      <option value="mobile-app">Mobile App Services</option>
+                      <option value="web-app">Web App Services</option>
+                      <option value="clone-scripts">Clone Scripts</option>
+                      <option value="fintech">Fintech App Development</option>
+                      <option value="ai-solutions">Custom AI Solutions</option>
+                    </select>
+                  </div>
+                  <div class="cp-field cp-field--textarea">
+                    <textarea id="requirements" rows="2" placeholder="How can we help you? Describe your requirements..."></textarea>
+                  </div>
+                  <button type="submit" class="cp-submit">
+                    <span>Book Free Consultation</span>
+                    <i class="fas fa-arrow-right"></i>
+                  </button>
                 </form>
               </div>
-            </div>
+              <div class="cp-social">
+                <a href="https://www.facebook.com/Coderegimetech/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/RegimeCode" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/coderegimetechnologies/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/coderegime/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@CodeRegime" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
+            </section>
+
           </div>
         </div>
       </div>
     </div>`;
 
-    // Only inject if it doesn't already exist on the page (e.g. from header.html on some pages)
-    if (!document.getElementById("contactPopup")) {
+    // Ensure the new modern modal is present; replace any stale legacy popup
+    const existingPopup = document.getElementById("contactPopup");
+    if (existingPopup) {
+      if (!existingPopup.querySelector(".cp-content")) {
+        existingPopup.remove();
+        document.body.insertAdjacentHTML("beforeend", contactModalHTML);
+      }
+    } else {
       document.body.insertAdjacentHTML("beforeend", contactModalHTML);
     }
+
+    // Auto-swipe Testimonials Carousel (3-second interval)
+    (function initTestimonialCarousel() {
+      const testimonials = [
+        {
+          quote: "From initial consultation to final deployment, Code Regime exceeded every expectation. Their team built us a robust, scalable application and provided hands-on support throughout the entire process. A truly world-class partner.",
+          name: "BLACKBEACON B.V.",
+          role: "Client",
+          company: "Kemetic.app",
+          avatar: "/images/testimonial/testi-1.webp",
+          icon: "fa-solid fa-cloud-bolt"
+        },
+        {
+          quote: "Working with Code Regime was a game-changer for our business. Their professionalism, attention to detail, and ability to deliver on tight deadlines made the entire experience seamless. We've seen measurable growth since launch.",
+          name: "Rishu Rajput",
+          role: "Founder",
+          company: "ApniRide",
+          avatar: "/images/testimonial/testi-2.webp",
+          icon: "fa-solid fa-car"
+        },
+        {
+          quote: "The level of technical expertise and creative thinking Code Regime brought to our project was outstanding. They transformed our vision into a polished product that our users love. Couldn't have asked for a better development partner.",
+          name: "Sakthivadivelan G",
+          role: "Founder",
+          company: "Unicare",
+          avatar: "/images/testimonial/testi-3.webp",
+          icon: "fa-solid fa-heart-pulse"
+        },
+        {
+          quote: "Code Regime's team is incredibly reliable and easy to collaborate with. They understood our requirements quickly, kept communication transparent, and delivered a solution that significantly improved our operational efficiency.",
+          name: "Carlos Vargas",
+          role: "Product Lead",
+          company: "InCav",
+          avatar: "/images/testimonial/testi-4.webp",
+          icon: "fa-solid fa-shield-halved"
+        },
+        {
+          quote: "Exceptional quality and dedication from start to finish. Code Regime didn't just build what we asked for — they proactively suggested improvements that made the final product far better than we originally envisioned.",
+          name: "Brian",
+          role: "Tech Director",
+          company: "Well-check",
+          avatar: "/images/testimonial/testi-5.webp",
+          icon: "fa-solid fa-stethoscope"
+        }
+      ];
+
+      const slider = document.getElementById("cpTestimonialSlider");
+      const quoteEl = document.getElementById("cpTestiQuote");
+      const avatarEl = document.getElementById("cpTestiAvatar");
+      const nameEl = document.getElementById("cpTestiName");
+      const roleEl = document.getElementById("cpTestiRole");
+      const companyEl = document.getElementById("cpTestiCompany");
+      const iconEl = document.getElementById("cpTestiIcon");
+      const dotsContainer = document.getElementById("cpTestiDots");
+      const card = document.getElementById("cpTestimonialCard");
+      const modalEl = document.getElementById("contactPopup");
+
+      if (!slider || !dotsContainer) return;
+
+      const dots = dotsContainer.querySelectorAll(".cp-dot");
+      let currentIndex = 0;
+      let timer = null;
+
+      function renderSlide(index) {
+        const item = testimonials[index];
+        if (!item) return;
+
+        slider.style.opacity = '0';
+        slider.style.transform = 'translateY(3px)';
+
+        setTimeout(() => {
+          if (quoteEl) quoteEl.textContent = item.quote;
+          if (avatarEl) {
+            avatarEl.src = item.avatar;
+            avatarEl.alt = item.name;
+          }
+          if (nameEl) nameEl.textContent = item.name;
+          if (roleEl) roleEl.textContent = item.role;
+          if (companyEl) companyEl.textContent = item.company;
+          if (iconEl) iconEl.className = item.icon;
+
+          dots.forEach((dot, idx) => {
+            if (idx === index) {
+              dot.classList.add("cp-dot--active");
+            } else {
+              dot.classList.remove("cp-dot--active");
+            }
+          });
+
+          slider.style.opacity = '1';
+          slider.style.transform = 'translateY(0)';
+        }, 180);
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        renderSlide(currentIndex);
+      }
+
+      function startTimer() {
+        stopTimer();
+        timer = setInterval(nextSlide, 3000);
+      }
+
+      function stopTimer() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          const idx = parseInt(dot.getAttribute("data-index"), 10);
+          if (!isNaN(idx) && idx !== currentIndex) {
+            currentIndex = idx;
+            renderSlide(currentIndex);
+            startTimer();
+          }
+        });
+      });
+
+      if (card) {
+        card.addEventListener("mouseenter", stopTimer);
+        card.addEventListener("mouseleave", startTimer);
+      }
+
+      if (modalEl) {
+        modalEl.addEventListener("hidden.bs.modal", stopTimer);
+        modalEl.addEventListener("shown.bs.modal", startTimer);
+      }
+
+      startTimer();
+    })();
 
     // Auto-show Contact Modal after 6.5 seconds (without sessionStorage check for now for testing)
     setTimeout(() => {
@@ -498,18 +770,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 6500);
 
     // Form submission logic for the modal
-    const contactPopupForm = document.querySelector("#contactPopup form");
+    const contactPopupForm = document.querySelector("#contactPopup .cp-form");
     if (contactPopupForm) {
       contactPopupForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const fname = contactPopupForm.querySelector("#name") ? contactPopupForm.querySelector("#name").value.trim() : '';
         const email = contactPopupForm.querySelector("#email") ? contactPopupForm.querySelector("#email").value.trim() : '';
-        const country = contactPopupForm.querySelector("#country") ? contactPopupForm.querySelector("#country").value.trim() : '';
+        const company = contactPopupForm.querySelector("#company") ? contactPopupForm.querySelector("#company").value.trim() : '';
         const phone = contactPopupForm.querySelector("#mobile") ? contactPopupForm.querySelector("#mobile").value.trim() : '';
 
         const serviceEl = contactPopupForm.querySelector("#service");
-        const service = serviceEl ? serviceEl.options[serviceEl.selectedIndex].text : '';
+        const service = serviceEl && serviceEl.selectedIndex > 0 ? serviceEl.options[serviceEl.selectedIndex].text : '';
 
         const requirements = contactPopupForm.querySelector("#requirements");
         const message = requirements ? requirements.value.trim() : '';
@@ -518,15 +790,15 @@ document.addEventListener("DOMContentLoaded", function () {
           Swal.fire({
             icon: 'warning',
             title: 'Missing Fields',
-            text: 'Please fill in Name, Email, and Requirements.'
+            text: 'Please fill in Name, Email, and your requirements.'
           });
           return;
         }
 
-        const submitBtn = contactPopupForm.querySelector('button[type="submit"]');
+        const submitBtn = contactPopupForm.querySelector('.cp-submit');
         const originalBtnHTML = submitBtn.innerHTML;
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending...';
+        submitBtn.innerHTML = '<span>Sending...</span>';
 
         const templateParams = {
           fname: fname,
@@ -534,7 +806,7 @@ document.addEventListener("DOMContentLoaded", function () {
           email: email,
           user_email: email,
           phone: phone || 'Not Specified',
-          company: country ? 'Country: ' + country : 'Not Specified',
+          company: company || 'Not Specified',
           budget: 'Not Specified',
           service: service || 'Not Specified',
           message: message

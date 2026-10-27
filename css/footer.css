@@ -384,225 +384,835 @@ hr
 
 /* ============================================
    Contact Consultation Popup Modal (#contactPopup)
-   Injected & Managed by footer.js
+   Modern Two-Panel Design:
+   - Left: Dark Showcase Panel (Testimonial, Metrics, Direct Tile, Trust Badges)
+   - Right: Clean White Form Panel (Underlined Fields, India Prefix, Service, CTA, Socials)
+   Brand Theme Colors: Royal Blue (rgb(9, 62, 176) / #0051C8) & Slate Navy
    ============================================ */
-@media (min-width: 992px) {
-  #contactPopup .modal-lg,
-  #contactPopup.modal .modal-dialog.modal-lg {
-    --bs-modal-width: 1000px !important;
-    max-width: 1000px !important;
-  }
+
+#contactPopup {
+  z-index: 100000 !important;
 }
 
-#contactPopup .modal-content {
+#contactPopup .modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+/* Modal Dialog */
+#contactPopup .cp-dialog {
+  max-width: 980px;
+  width: 95%;
+  margin: 1.75rem auto;
+}
+
+/* Modal Content Container */
+#contactPopup .cp-content {
   position: relative;
-  border: none;
-  border-radius: 8px;
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff !important;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 35px rgba(9, 62, 176, 0.22);
+  background: #091122;
 }
 
-#contactPopup .modal-header {
-  border-bottom: none !important;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 10;
-  padding: 1rem 1rem;
-}
-
-#contactPopup .btn-close:focus {
-  box-shadow: none !important;
-}
-
-#contactPopup .modal-body {
+/* Modal Body */
+#contactPopup .cp-body {
   padding: 0 !important;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: transparent;
+}
+
+/* ────────────────────────────────────────────
+   LEFT: Dark Showcase Panel
+   ──────────────────────────────────────────── */
+#contactPopup .cp-left {
+  flex: 1 1 54%;
+  width: 54%;
   position: relative;
-  background-color: #ffffff !important;
-  overflow: hidden;
-}
-
-#contactPopup .modal-body .row {
-  margin: 0 !important;
-}
-
-#contactPopup .modal-body p:last-child {
-  margin-bottom: 0px;
-}
-
-#contactPopup .modal-title {
-  margin-bottom: 15px !important;
-  font-weight: 800;
-  color: #1E2460 !important;
-  font-family: 'Poppins', 'Outfit', sans-serif;
-  font-size: 24px;
-}
-
-#contactPopup .left-side {
-  background: linear-gradient(135deg, #093eb0, #002d97) !important;
-  padding: 40px 30px !important;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(135deg, #0c162f 0%, #091224 50%, #060c18 100%);
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
-#contactPopup .contact-info {
-  position: relative !important;
-  width: 100% !important;
-  height: auto !important;
-  padding: 0 !important;
-  background: transparent !important;
-  font-size: 14px;
-  box-sizing: border-box;
-  z-index: 1;
-}
-
-#contactPopup .contact-info::before {
+/* Background Dot Overlay */
+#contactPopup .cp-left-bg-dots {
   position: absolute;
-  content: '';
-  left: 0;
-  top: 0;
-  background-image: url(/images/ser_shape.webp);
-  width: 323px;
-  height: 1024px;
-  opacity: 0.1;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.3;
   pointer-events: none;
 }
 
-#contactPopup .contact-info p a {
-  color: #ffffff !important;
-  text-decoration: none;
+/* Glowing Decorative Orbs */
+#contactPopup .cp-left-orb--top {
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  width: 260px;
+  height: 260px;
+  background: rgba(9, 62, 176, 0.25);
+  border-radius: 50%;
+  filter: blur(55px);
+  pointer-events: none;
 }
 
-#contactPopup .contact-info p {
-  color: #ffffff !important;
+#contactPopup .cp-left-orb--bottom {
+  position: absolute;
+  bottom: -70px;
+  right: -70px;
+  width: 260px;
+  height: 260px;
+  background: rgba(0, 81, 200, 0.18);
+  border-radius: 50%;
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+#contactPopup .cp-left-inner {
+  position: relative;
+  z-index: 2;
+  padding: 32px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+  gap: 16px;
+}
+
+/* Testimonial Card */
+#contactPopup .cp-testimonial {
+  background: rgba(19, 33, 66, 0.9);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+#contactPopup .cp-quote-icon {
+  color: rgb(9, 62, 176);
+  font-size: 22px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+#contactPopup .cp-testimonial-slider {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  will-change: opacity, transform;
+}
+
+#contactPopup .cp-testimonial-text {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin: 0 0 12px 0;
+  font-weight: 400;
+  min-height: 60px;
+}
+
+#contactPopup .cp-testimonial-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+#contactPopup .cp-testimonial-footer {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
-  font-family: 'Open Sans', 'Outfit', sans-serif;
+  justify-content: space-between;
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+  padding-top: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-#contactPopup .contact-info p:last-child {
-  margin-bottom: 0px;
+#contactPopup .cp-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-#contactPopup .contact-info .icon {
+#contactPopup .cp-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgb(9, 62, 176);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#contactPopup .cp-author-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+#contactPopup .cp-author-role {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 2px 0 0;
+}
+
+#contactPopup .cp-company-badge {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(71, 85, 105, 0.8);
+  font-size: 11px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+#contactPopup .cp-company-badge i {
+  color: #38bdf8;
+  font-size: 11px;
+}
+
+/* Carousel Indicator Dots */
+#contactPopup .cp-dots {
+  display: flex;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+#contactPopup .cp-dot {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  color: #ffffff !important;
-  margin-right: 10px;
+  background: rgba(148, 163, 184, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#contactPopup .cp-dot:hover {
+  background: rgba(148, 163, 184, 0.85);
+}
+
+#contactPopup .cp-dot--active {
+  width: 9px;
+  height: 9px;
+  background: rgb(9, 62, 176);
+  box-shadow: 0 0 8px rgba(9, 62, 176, 0.8);
+}
+
+/* Stats Grid (Metrics + Quick Reach Tile) */
+#contactPopup .cp-stats-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  align-items: stretch;
+}
+
+/* Metric Badges Grid */
+#contactPopup .cp-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: dense;
+  gap: 7px;
+}
+
+#contactPopup .cp-metric {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(30, 41, 59, 0.9);
+  border-radius: 12px;
+  padding: 9px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 58px;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: border-color 0.2s ease;
+}
+
+#contactPopup .cp-metric--wide {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  min-height: 58px;
+}
+
+#contactPopup .cp-metric--wide .cp-metric-value {
+  margin-top: 0;
   flex-shrink: 0;
 }
 
-#contactPopup .whatsapp {
-  background-color: #25D366;
+#contactPopup .cp-metric-link {
+  color: #38bdf8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
 }
 
-#contactPopup .skype {
-  background-color: #00AFF0;
+#contactPopup .cp-metric-link:hover {
+  color: #7dd3fc;
 }
 
-#contactPopup .email {
-  background-color: #EA4335;
+#contactPopup .cp-metric:hover {
+  border-color: rgba(71, 85, 105, 0.9);
 }
 
-#contactPopup .mobile {
-  background-color: #34b7f1;
+#contactPopup .cp-metric-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #94a3b8;
+  line-height: 1.25;
 }
 
-#contactPopup .right-side {
-  padding: 35px 30px !important;
-  background-color: #ffffff !important;
-  position: relative;
-  z-index: 2;
+#contactPopup .cp-metric-label i {
+  font-size: 11px;
+  color: #94a3b8;
+  flex-shrink: 0;
 }
 
-#contactPopup .right-side label,
-#contactPopup .right-side .form-label {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #0f172a !important;
-  font-family: 'Open Sans', 'Outfit', sans-serif;
-  display: inline-block;
-}
-
-#contactPopup .right-side .form-control:focus,
-#contactPopup .right-side .form-select:focus {
-  border-color: #0051C8 !important;
-  box-shadow: 0 0 0 3px rgba(0, 81, 200, 0.15) !important;
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-}
-
-#contactPopup .right-side .form-control,
-#contactPopup .right-side .form-select {
-  border: 1px solid #94a3b8 !important;
-  box-shadow: none;
-  font-size: 14px;
-  height: 42px;
-  border-radius: 6px;
-  font-family: 'Open Sans', 'Outfit', sans-serif;
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-}
-
-#contactPopup .right-side .form-control::placeholder,
-#contactPopup .right-side .form-control::-webkit-input-placeholder,
-#contactPopup .right-side .form-control::-moz-placeholder,
-#contactPopup .right-side .form-control:-ms-input-placeholder {
-  color: #475569 !important;
-  opacity: 1 !important;
-}
-
-#contactPopup .right-side textarea.form-control {
-  height: 80px !important;
-}
-
-#contactPopup .right-side .btn-primary {
-  background-image: linear-gradient(90deg, #0C3DF4 0%, #02B5FF 100%) !important;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 24px;
-  font-weight: 600;
+#contactPopup .cp-metric-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 19px;
+  font-weight: 800;
   color: #ffffff;
-  font-family: 'Open Sans', 'Outfit', sans-serif;
-  transition: all 0.3s ease;
+  margin-top: 4px;
+  line-height: 1;
 }
 
-#contactPopup .right-side .btn-primary:hover {
-  background-image: linear-gradient(90deg, #fca41c 0%, #ffc772 100%) !important;
+#contactPopup .cp-metric-plus {
+  color: #093eb0;
+  font-weight: 800;
+  font-size: 19px;
 }
 
-#contactPopup .right-side .col-sm-12,
-#contactPopup .right-side .col-12 {
-  margin-bottom: 15px;
+/* Direct Reach Contact Bar (Horizontal Block Below Metrics: Email, Phone & WhatsApp) */
+#contactPopup .cp-contact-bar {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #0f172a;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#contactPopup .modal-footer {
-  border-top: none !important;
-  padding-top: 0px !important;
+#contactPopup .cp-contact-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 auto;
 }
 
-#contactPopup .modal-footer .btn-secondary {
-  background-image: linear-gradient(90deg, #0C3DF4 0%, #02B5FF 100%);
+#contactPopup .cp-contact-bar-item--full {
+  width: 100%;
+}
+
+#contactPopup .cp-contact-bar-divider-h {
+  width: 100%;
+  height: 1px;
+  background: #f1f5f9;
+}
+
+#contactPopup .cp-contact-bar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+#contactPopup .cp-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+#contactPopup .cp-contact-divider {
+  width: 1px;
+  height: 28px;
+  background: #e2e8f0;
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+
+#contactPopup .cp-contact-icon-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e293b;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+#contactPopup .cp-contact-icon-circle--whatsapp {
+  background: #e7f9ee;
+  color: #16a34a;
+}
+
+#contactPopup .cp-contact-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.1;
+}
+
+#contactPopup .cp-contact-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1.25;
+  transition: color 0.2s ease;
+}
+
+#contactPopup .cp-contact-value:hover {
+  color: #093eb0;
+}
+
+#contactPopup .cp-contact-value--bold {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#contactPopup .cp-contact-value--whatsapp:hover {
+  color: #16a34a;
+}
+
+/* Trust Badges */
+#contactPopup .cp-trust-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding-top: 14px;
+  margin-top: 4px;
+  border-top: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+#contactPopup .cp-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#contactPopup .cp-badge-icon {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+#contactPopup .cp-badge-icon--blue {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  background: rgba(8, 47, 73, 0.4);
+}
+
+#contactPopup .cp-badge-top {
+  font-size: 7.5px;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+#contactPopup .cp-badge-bottom {
+  font-size: 6.5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+#contactPopup .cp-badge-icon--green {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(52, 211, 153, 0.5);
+  background: rgba(6, 78, 59, 0.4);
+  color: #34d399;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+#contactPopup .cp-badge-text {
+  font-size: 9.5px;
+  line-height: 1.25;
+  color: #94a3b8;
+}
+
+#contactPopup .cp-badge-title {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ────────────────────────────────────────────
+   RIGHT: Clean White Form Panel
+   ──────────────────────────────────────────── */
+#contactPopup .cp-right {
+  flex: 1 1 46%;
+  width: 46%;
+  background: #ffffff;
+  padding: 32px 32px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Circular Close Button */
+#contactPopup .cp-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  font-size: 14px;
+  padding: 0;
+}
+
+#contactPopup .cp-close:hover {
+  color: #0f172a;
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  transform: rotate(90deg);
+}
+
+#contactPopup .cp-close:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#contactPopup .cp-right-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Header */
+#contactPopup .cp-form-header {
+  margin-bottom: 18px;
+  padding-right: 28px;
+}
+
+#contactPopup .cp-heading {
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: rgb(9, 62, 176);
+  line-height: 1.25;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+#contactPopup .cp-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11.5px;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Form */
+#contactPopup .cp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contactPopup .cp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Input Fields (Line / Underline Style) */
+#contactPopup .cp-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1.5px solid #cbd5e1;
+  padding-bottom: 5px;
+  transition: border-color 0.2s ease;
+}
+
+#contactPopup .cp-field:focus-within {
+  border-bottom-color: rgb(9, 62, 176);
+}
+
+#contactPopup .cp-icon {
+  color: #94a3b8;
+  font-size: 13px;
+  width: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contactPopup .cp-field:focus-within .cp-icon {
+  color: rgb(9, 62, 176);
+}
+
+#contactPopup .cp-field input,
+#contactPopup .cp-field select,
+#contactPopup .cp-field textarea {
+  width: 100%;
   border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  color: #1e293b;
+  padding: 4px 6px;
+  box-shadow: none !important;
 }
 
-@media (max-width: 991.98px) {
-  #contactPopup .left-side {
-    display: none !important;
+#contactPopup .cp-field input::placeholder,
+#contactPopup .cp-field textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Phone Field */
+#contactPopup .cp-phone-prefix {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 6px 0 2px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+#contactPopup .cp-flag {
+  width: 16px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#contactPopup .cp-chevron {
+  font-size: 9px;
+  color: #94a3b8;
+}
+
+#contactPopup .cp-code {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  margin-left: 2px;
+}
+
+#contactPopup .cp-field--phone input {
+  padding-left: 6px;
+}
+
+/* Select Field */
+#contactPopup .cp-field--select select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  padding-right: 22px;
+}
+
+/* Textarea Field */
+#contactPopup .cp-field--textarea {
+  align-items: flex-start;
+  padding-bottom: 2px;
+}
+
+#contactPopup .cp-field--textarea textarea {
+  resize: none;
+  min-height: 48px;
+  padding: 2px 4px;
+  line-height: 1.4;
+}
+
+/* Submit CTA Button */
+#contactPopup .cp-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  background: rgb(9, 62, 176);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(9, 62, 176, 0.35);
+  margin-top: 4px;
+}
+
+#contactPopup .cp-submit:hover {
+  background: #07318f;
+  box-shadow: 0 6px 18px rgba(9, 62, 176, 0.45);
+  transform: translateY(-1px);
+}
+
+#contactPopup .cp-submit:active {
+  transform: translateY(0);
+}
+
+#contactPopup .cp-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#contactPopup .cp-submit i {
+  font-size: 11px;
+}
+
+/* Social Media Channels Bar */
+#contactPopup .cp-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+#contactPopup .cp-social a {
+  color: #64748b;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contactPopup .cp-social a:hover {
+  color: rgb(9, 62, 176);
+  transform: translateY(-1px);
+}
+
+/* ────────────────────────────────────────────
+   Responsive Layouts
+   ──────────────────────────────────────────── */
+@media (max-width: 991px) {
+  #contactPopup .cp-dialog {
+    max-width: 620px;
   }
 
-  #contactPopup .right-side {
-    padding: 30px 20px !important;
+  #contactPopup .cp-body {
+    flex-direction: column;
+  }
+
+  #contactPopup .cp-left {
+    width: 100%;
+    padding: 24px 20px;
+  }
+
+  #contactPopup .cp-right {
+    width: 100%;
+    padding: 24px 20px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  #contactPopup .cp-dialog {
+    max-width: 95vw;
+    margin: 12px auto;
+  }
+
+  #contactPopup .cp-left-inner {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  #contactPopup .cp-right {
+    padding: 24px 16px 18px;
+  }
+
+  #contactPopup .cp-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  #contactPopup .cp-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  #contactPopup .cp-metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #contactPopup .cp-contact-bar {
+    padding: 10px 12px;
+  }
+
+  #contactPopup .cp-contact-bar-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  #contactPopup .cp-contact-divider {
+    display: none;
+  }
+
+  #contactPopup .cp-trust-badges {
+    gap: 16px;
+  }
+
+  #contactPopup .cp-heading {
+    font-size: 19px;
   }
 }
 
