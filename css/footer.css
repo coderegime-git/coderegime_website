@@ -1071,6 +1071,18 @@ hr
   padding-right: 22px;
 }
 
+#contactPopup .cp-field--select select optgroup {
+  font-weight: 700;
+  color: rgb(9, 62, 176);
+  background: #ffffff;
+}
+
+#contactPopup .cp-field--select select option {
+  font-weight: 400;
+  color: #1e293b;
+  background: #ffffff;
+}
+
 /* Textarea Field */
 #contactPopup .cp-field--textarea {
   align-items: flex-start;

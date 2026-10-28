@@ -578,11 +578,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     <span class="cp-icon"><i class="fas fa-layer-group"></i></span>
                     <select id="service">
                       <option value="" disabled selected>Select Product / Service</option>
-                      <option value="mobile-app">Mobile App Services</option>
-                      <option value="web-app">Web App Services</option>
-                      <option value="clone-scripts">Clone Scripts</option>
-                      <option value="fintech">Fintech App Development</option>
-                      <option value="ai-solutions">Custom AI Solutions</option>
+                      <optgroup label="Services">
+                        <option value="blockchain-development">Blockchain Development Services</option>
+                        <option value="mobile-app-development">Mobile App Development</option>
+                        <option value="ios-app-development">iOS App Development</option>
+                        <option value="flutter-app-development">Flutter Development</option>
+                        <option value="android-app-development">Android App Development</option>
+                        <option value="web-app-development">Web App Development Services</option>
+                        <option value="enterprise-app-development">Enterprise App Development</option>
+                        <option value="ai-social-media-management">AI Social Media Management</option>
+                        <option value="ai-solutions">Custom AI Solutions</option>
+                      </optgroup>
+                      <optgroup label="Products / Clone Scripts">
+                        <option value="uber-clone">CabRegime - Uber Clone</option>
+                        <option value="ubereats-clone">FoodRegime - Ubereats clone</option>
+                        <option value="uber-for-handyman-app">HandymanRegime - Uber for Handman</option>
+                        <option value="fintech-app">Fintech App</option>
+                        <option value="flight-booking-app">Flight Booking App</option>
+                        <option value="clone-scripts">Other Clone Scripts</option>
+                      </optgroup>
                     </select>
                   </div>
                   <div class="cp-field cp-field--textarea">
