@@ -462,29 +462,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="cp-metrics">
                   <!-- Row 1: Happy Clients (Full-width banner) -->
                   <div class="cp-metric cp-metric--wide">
-                    <div class="cp-metric-label"><i class="fas fa-users"></i><span>Happy Clients</span></div>
                     <div class="cp-metric-value">200<span class="cp-metric-plus">+</span></div>
+                    <div class="cp-metric-label"><i class="fas fa-users"></i><span>Happy Clients</span></div>
                   </div>
                   <!-- Row 2: Projects in app development & Countries Served -->
                   <div class="cp-metric">
-                    <div class="cp-metric-label">
-                      <i class="fas fa-layer-group"></i>
-                      <span>Projects in <a href="https://www.coderegimetechnologies.com/mobile-app-development/" target="_blank" rel="noopener" class="cp-metric-link">app development</a></span>
-                    </div>
                     <div class="cp-metric-value">1200<span class="cp-metric-plus">+</span></div>
+                    <div class="cp-metric-label"><i class="fas fa-layer-group"></i><span>Completed Projects</span></div>
                   </div>
                   <div class="cp-metric">
-                    <div class="cp-metric-label"><i class="fas fa-globe"></i><span>Countries Served</span></div>
                     <div class="cp-metric-value">20<span class="cp-metric-plus">+</span></div>
+                    <div class="cp-metric-label"><i class="fas fa-globe"></i><span>Countries Served</span></div>
                   </div>
                   <!-- Row 3: Expert Team Members & Years of Market Domination -->
                   <div class="cp-metric">
-                    <div class="cp-metric-label"><i class="fas fa-user-tie"></i><span>Expert Team Members</span></div>
                     <div class="cp-metric-value">50<span class="cp-metric-plus">+</span></div>
+                    <div class="cp-metric-label"><i class="fas fa-user-tie"></i><span>Expert Team Members</span></div>
                   </div>
                   <div class="cp-metric">
-                    <div class="cp-metric-label"><i class="fas fa-crown"></i><span>Years of Market Domination</span></div>
                     <div class="cp-metric-value">8<span class="cp-metric-plus">+</span></div>
+                    <div class="cp-metric-label"><i class="fas fa-crown"></i><span>Years of Market Domination</span></div>
                   </div>
                 </div>
 

@@ -401,7 +401,7 @@ hr
 
 /* Modal Dialog */
 #contactPopup .cp-dialog {
-  max-width: 980px;
+  max-width: 1140px;
   width: 95%;
   margin: 1.75rem auto;
 }
@@ -412,6 +412,7 @@ hr
   border: 1px solid rgba(51, 65, 85, 0.6);
   border-radius: 24px;
   overflow: hidden;
+  max-height: 88vh;
   box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 35px rgba(9, 62, 176, 0.22);
   background: #091122;
 }
@@ -478,13 +479,13 @@ hr
 #contactPopup .cp-left-inner {
   position: relative;
   z-index: 2;
-  padding: 32px 32px 28px;
+  padding: 24px 28px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   box-sizing: border-box;
-  gap: 16px;
+  gap: 12px;
 }
 
 /* Testimonial Card */
@@ -494,7 +495,7 @@ hr
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
-  padding: 18px 20px;
+  padding: 14px 18px;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
 }
 
@@ -634,11 +635,13 @@ hr
   background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(30, 41, 59, 0.9);
   border-radius: 12px;
-  padding: 9px 12px;
+  padding: 7px 12px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 58px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50px;
   box-sizing: border-box;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -649,10 +652,10 @@ hr
   grid-column: span 2;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
-  padding: 10px 14px;
-  min-height: 58px;
+  padding: 8px 14px;
+  min-height: 50px;
 }
 
 #contactPopup .cp-metric--wide .cp-metric-value {
@@ -678,7 +681,8 @@ hr
 #contactPopup .cp-metric-label {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 5px;
   font-size: 10.5px;
   font-weight: 500;
   color: #94a3b8;
@@ -696,12 +700,13 @@ hr
   font-size: 19px;
   font-weight: 800;
   color: #ffffff;
-  margin-top: 4px;
+  margin-top: 0;
+  margin-bottom: 2px;
   line-height: 1;
 }
 
 #contactPopup .cp-metric-plus {
-  color: #093eb0;
+  color: #ffb922;
   font-weight: 800;
   font-size: 19px;
 }
@@ -710,10 +715,10 @@ hr
 #contactPopup .cp-contact-bar {
   background: #ffffff;
   border-radius: 12px;
-  padding: 10px 14px;
+  padding: 8px 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   color: #0f172a;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   width: 100%;
@@ -886,11 +891,16 @@ hr
   flex: 1 1 46%;
   width: 46%;
   background: #ffffff;
-  padding: 32px 32px 24px;
+  padding: 24px 28px 18px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 14px 14px 14px 0;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e8f0;
+  box-sizing: border-box;
 }
 
 /* Circular Close Button */
@@ -934,7 +944,7 @@ hr
 
 /* Form Header */
 #contactPopup .cp-form-header {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   padding-right: 28px;
 }
 
@@ -1159,8 +1169,10 @@ hr
   }
 
   #contactPopup .cp-right {
-    width: 100%;
+    width: auto;
     padding: 24px 20px 20px;
+    margin: 0 14px 14px 14px;
+    border-radius: 20px;
   }
 }
 
