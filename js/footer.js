@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <i class="fab fa-whatsapp"></i>
                 <span class="social-text">WhatsApp</span>
             </a>
-            <a href="https://t.me/+919944314416" target="_blank" rel="noopener" class="telegram">
+            <a href="https://telegram.me/coderegimetechnologies" target="_blank" rel="noopener" class="telegram">
                 <i class="fab fa-telegram-plane"></i>
                 <span class="social-text">Telegram</span>
             </a>
