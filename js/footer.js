@@ -400,10 +400,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <i class="fas fa-envelope"></i>
                 <span class="social-text">Mail</span>
             </a>
-            <a href="https://calendly.com/" target="_blank" rel="noopener" class="calendly">
+           <!-- <a href="https://calendly.com/" target="_blank" rel="noopener" class="calendly">
                 <i class="far fa-calendar-alt"></i>
                 <span class="social-text">Calendly</span>
-            </a>
+            </a> -->
         </div>
     `;
 
