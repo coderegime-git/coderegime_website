@@ -767,18 +767,56 @@ document.addEventListener("DOMContentLoaded", function () {
       startTimer();
     })();
 
-    // Auto-show Contact Modal after 6.5 seconds (without sessionStorage check for now for testing)
-    setTimeout(() => {
-      const contactPopup = document.getElementById("contactPopup");
-      console.log("Checking for contactPopup in footer.js:", contactPopup);
+    // ─────────────────────────────────────────────
+    // Contact Modal Display Management
+    // Auto-show only once per session (prevents re-opening on page change)
+    // ─────────────────────────────────────────────
+    const POPUP_STORAGE_KEY = "cr_contact_popup_shown";
+    const POPUP_SUBMITTED_KEY = "cr_contact_popup_submitted";
 
-      if (contactPopup) {
-        if (typeof window.bootstrap !== 'undefined') {
-          const modal = new bootstrap.Modal(contactPopup);
+    function hasPopupBeenShown() {
+      try {
+        return (
+          sessionStorage.getItem(POPUP_STORAGE_KEY) === "true" ||
+          localStorage.getItem(POPUP_SUBMITTED_KEY) === "true"
+        );
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function markPopupAsShown() {
+      try {
+        sessionStorage.setItem(POPUP_STORAGE_KEY, "true");
+      } catch (e) {}
+    }
+
+    const contactPopupModalEl = document.getElementById("contactPopup");
+    if (contactPopupModalEl) {
+      // If modal is manually opened at any time, mark it so timer doesn't fire later
+      contactPopupModalEl.addEventListener("show.bs.modal", markPopupAsShown);
+    }
+
+    // Auto-show Contact Modal after 6.5 seconds only if not already shown in this session
+    const currentPath = (window.location.pathname || "").toLowerCase();
+    const isExcludedPage =
+      currentPath.includes("contact") ||
+      currentPath.includes("thank-you");
+
+    if (!hasPopupBeenShown() && !isExcludedPage) {
+      setTimeout(() => {
+        if (hasPopupBeenShown()) return;
+
+        const contactPopup = document.getElementById("contactPopup");
+        if (contactPopup && typeof window.bootstrap !== 'undefined') {
+          markPopupAsShown();
+          const modal = window.bootstrap.Modal.getOrCreateInstance
+            ? window.bootstrap.Modal.getOrCreateInstance(contactPopup)
+            : new window.bootstrap.Modal(contactPopup);
           modal.show();
         }
-      }
-    }, 6500);
+      }, 6500);
+    }
 
     // Form submission logic for the modal
     const contactPopupForm = document.querySelector("#contactPopup .cp-form");
@@ -836,6 +874,10 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(() => {
               submitBtn.disabled = false;
               submitBtn.innerHTML = originalBtnHTML;
+              markPopupAsShown();
+              try {
+                localStorage.setItem(POPUP_SUBMITTED_KEY, "true");
+              } catch (e) {}
 
               if (window.bootstrap) {
                 const modalEl = document.getElementById("contactPopup");

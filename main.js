@@ -24,23 +24,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             });
 
-            // Auto-show Contact Modal after 5-8 seconds
-            setTimeout(() => {
-                const contactPopup = document.getElementById("contactPopup");
-                console.log("Checking for contactPopup:", contactPopup);
-                
-                if (contactPopup) {
-                    if (window.bootstrap) {
-                        console.log("Bootstrap found, showing modal");
-                        const modal = new bootstrap.Modal(contactPopup);
+            // Auto-show Contact Modal after 6.5 seconds (only once per session)
+            const POPUP_STORAGE_KEY = "cr_contact_popup_shown";
+            const POPUP_SUBMITTED_KEY = "cr_contact_popup_submitted";
+            let alreadyShown = false;
+            try {
+                alreadyShown = sessionStorage.getItem(POPUP_STORAGE_KEY) === "true" || localStorage.getItem(POPUP_SUBMITTED_KEY) === "true";
+            } catch (e) {}
+
+            const currentPath = (window.location.pathname || "").toLowerCase();
+            const isExcludedPage = currentPath.includes("contact") || currentPath.includes("thank-you");
+
+            if (!alreadyShown && !isExcludedPage) {
+                setTimeout(() => {
+                    try {
+                        if (sessionStorage.getItem(POPUP_STORAGE_KEY) === "true") return;
+                    } catch (e) {}
+                    const contactPopup = document.getElementById("contactPopup");
+                    if (contactPopup && window.bootstrap) {
+                        try {
+                            sessionStorage.setItem(POPUP_STORAGE_KEY, "true");
+                        } catch (e) {}
+                        const modal = window.bootstrap.Modal.getOrCreateInstance ? window.bootstrap.Modal.getOrCreateInstance(contactPopup) : new bootstrap.Modal(contactPopup);
                         modal.show();
-                    } else {
-                        console.error("Bootstrap is not defined. Ensure bootstrap.bundle.min.js is loaded.");
                     }
-                } else {
-                    console.error("contactPopup element not found in the DOM.");
-                }
-            }, 6500);
+                }, 6500);
+            }
         });
 
     // Load Footer
