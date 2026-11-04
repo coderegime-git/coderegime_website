@@ -130,10 +130,18 @@ for (const filePath of htmlFiles) {
 
   if (modified) {
     if (!isDryRun) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      try {
+        fs.writeFileSync(filePath, content, 'utf8');
+        console.log(`[SYNCED] ${relativePath}`);
+        updatedCount++;
+      } catch (err) {
+        console.warn(`[WARNING: LOCKED/EPERM] Could not write ${relativePath}: ${err.message}`);
+        noMatchCount++;
+      }
+    } else {
+      console.log(`[WOULD SYNC] ${relativePath}`);
+      updatedCount++;
     }
-    console.log(`[${isDryRun ? 'WOULD SYNC' : 'SYNCED'}] ${relativePath}`);
-    updatedCount++;
   } else {
     alreadyInSyncCount++;
   }
