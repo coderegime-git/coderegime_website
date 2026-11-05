@@ -672,6 +672,127 @@ nav {
 }
 
 /* ============================================
+   Partner Logos Marquee Section
+   ============================================ */
+.partner-marquee-section {
+  padding: 40px 0;
+  background: #ffffff;
+  border-top: 1px solid #e8e8f0;
+  border-bottom: 1px solid #e8e8f0;
+}
+
+.partner-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.partner-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.partner-marquee-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+}
+
+.partner-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 40px;
+  min-width: max-content;
+}
+
+.partner-marquee.left .partner-marquee-track {
+  animation: scrollLeft 40s linear infinite;
+}
+
+.partner-marquee:hover .partner-marquee-track {
+  animation-play-state: paused;
+}
+
+.partner-logo-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  min-width: max-content;
+}
+
+.partner-logo-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 81, 200, 0.2);
+}
+
+.partner-logo-item:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+.partner-logo-item img {
+  width: 120px;
+  height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.partner-logo-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 20px)); }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .partner-marquee.left .partner-marquee-track {
+    animation: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .partner-marquee-section {
+    padding: 30px 0;
+  }
+  .partner-logo-item img {
+    width: 100px;
+    height: 50px;
+  }
+  .partner-marquee-track,
+  .partner-marquee-group {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-logo-item img {
+    width: 90px;
+    height: 45px;
+  }
+  .partner-marquee-track,
+  .partner-marquee-group {
+    gap: 16px;
+  }
+}
+
+/* ============================================
    Phone / Call Dropdown
    ============================================ */
 .cr-call-btn {
